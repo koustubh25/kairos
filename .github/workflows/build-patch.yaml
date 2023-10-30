@@ -20,4 +20,8 @@ jobs:
       - name: Build  🔧
         run: |
           earthly +iso --VARIANT=standard --K3S_VERSION=latest --FLAVOR=ubuntu --FAMILY=ubuntu --FLAVOR_RELEASE=23.04 --KAIROS_VERSION=v2.4.1 --BASE_IMAGE=ubuntu:23.04 --MODEL=generic
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ubuntu-iso
+          path: build/kairos-ubuntu-23.04-standard-amd64-generic-v2.4.1.iso
       
